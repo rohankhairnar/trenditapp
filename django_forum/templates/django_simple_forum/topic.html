@@ -1,0 +1,55 @@
+{#{% load url from future %}#}
+{% extends 'app/base.html' %}
+{% block body_block %}
+
+<!-- Posts  -->
+<div class="tile-title">
+    <h3 align="center" class="bg-danger">{{ topic.title }}</h3></div>
+<div id="list">
+
+    {% for post in posts.object_list %}
+
+        <div class="post" >
+            <span class="title"><strong>{{ post.title }}</strong></span><br />
+            by <a>{{ post.creator }}</a> | <span class="date">{{ post.created }}</span> <br />
+            {{ post.body }} <br /><br/>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Next/Prev page links  -->
+{% if posts.object_list and posts.paginator.num_pages > 1 %}
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href= "?page={{ posts.previous_page_number }}">previous &lt;&lt; </a>
+        {% endif %}
+
+        <span class="current">
+            &nbsp;Page {{ posts.number }} of {{ topics.paginator.num_pages }}
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}"> &gt;&gt; next</a>
+        {% endif %}
+    </span>
+</div>
+{% endif %}
+        <br/>
+
+
+<a class="button" href="{% url 'reply' pk %}">Reply</a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+
+{% endblock %}

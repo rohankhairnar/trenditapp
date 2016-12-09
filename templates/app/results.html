@@ -1,0 +1,52 @@
+{% extends "app/base.html" %}
+<!DOCTYPE html>
+{% block body_block %}
+    {% block content %}
+
+
+    <form action="#" name="results" method="GET">
+        <div > <h2 align="center" class="">Latest on #<strong>{{ searchterm|cut:"%23"|cut:"%20" | cut:"#" }}</strong></h2></div>
+{#        <h3 align="right" class="bg-danger">#}
+{#            {% for forum in forums %}#}
+{#                <div class="title"> <a href="{% url 'forum-detail' forum.pk %}">{{ forum.title }}</a></div>#}
+{#            {% endfor %}#}
+{#        </h3>#}
+
+        <div class="panel panel-default" >
+            <div class="panel-heading" align="left" id="first-div" style="float: left; width: 50%;"><span class="glyphicon glyphicon-list"></span></span><b>Latest Tweets</b></div>
+          <form id="cref" name="cref" action="django_simple_forum/topic.html" method="get">  <div class="panel-heading" align="right" id="second-div" style="float: right; width: 50%;"><b><a href="http://127.0.0.1:8000/forum/1/?searchterm={{ searchterm|urlencode }}">Take me to discussions on {{  searchterm|cut:"%23"|cut:"%20"  }} <span class="glyphicon glyphicon-edit"></span></a>
+            </b></div></form>
+            <div class="panel-body"><div class="row"><div class="col-xs-12">
+    <ul class="demo">
+            {% for key in results %}
+            <li class="news-item"><table cellpadding="4"><tr><td> {{ key|urlize }}</td></tr></table></li>
+        {% endfor %}</ul>
+    <script type="text/javascript">
+        $(function () {
+        $(".demo").bootstrapNews({
+        newsPerPage: 11,
+        navigation: true,
+        autoplay: true,
+        direction:'up', // up or down
+        animationSpeed: 'normal',
+        newsTickerInterval: 2000, //2 secs
+        pauseOnHover: true,
+        onStop: null,
+        onPause: null,
+        onReset: null,
+        onPrev: null,
+        onNext: null,
+        onToDo: null
+        });
+        });
+        </script>
+{#    <div class="well"> {{ photos }}</div>#}
+    </div>
+</div>
+
+</div>
+</div>
+</form>
+    {% endblock %}
+
+{% endblock %}
