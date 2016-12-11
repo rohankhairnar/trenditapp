@@ -93,7 +93,7 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
-{#    timeline#}
+{
 
     </head>
 
@@ -178,11 +178,54 @@
                     <!--/.well -->
                 </div>
               <!--/span-->
-                <div class="span11" style="height: 555px">
-                    {% block body_block %}
+                <div class="span11">
 
-                    {% endblock %}
-                </div>
+{#                TIMELINE STARTS HERE------>>#}
+
+
+<link rel="stylesheet" href={% static "css/reset.css"%}> <!-- CSS reset -->
+	<link rel="stylesheet" href={% static "css/style.css" %}> <!-- Resource style -->
+	<script src={% static "js/modernizr.js" %}></script> <!-- Modernizr -->
+{#	<header>#}
+{#		<h1>{{ creator }}'s Timeline</h1>#}
+{#	</header>#}
+<div class="header" style="background-color: #3c3c3c; height: 250px"><br>
+<p align="center" style="color: #ffffff; margin-top: 50px; font-weight: 700; font-size: xx-large">
+    <b>{{ creator }}'s Timeline</b>
+</p>
+    <br>
+    <br>
+    <div></div>
+    <p>Name: {{ user.first_name }}   Username: {{ user.username }}</p>
+    <p>Email ID: {{ user.email }}</p>
+    <p>Last login: {{ user.last_login }}</p>
+</div>
+<div>
+	<section id="cd-timeline" class="cd-container">
+    {% for topic in topics.object_list %}
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="img/cd-icon-picture.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>{{ topic.title }}</h2>
+				<p>{{ topic.description }}</p>
+				<a href="{% url 'topic-detail' topic.pk %}" class="cd-read-more">Connect again!</a>
+				<span class="cd-date">{{ topic.created }}</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+        {% endfor %}
+
+
+	</section> <!-- cd-timeline -->
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src={% static "js/main.js" %}></script> <!-- Resource jQuery -->
+
+</div>
+
+{#        Timeline    ends here#}
                 <!--/span-->
             </div>
             <!--/row-->

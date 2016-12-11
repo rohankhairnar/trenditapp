@@ -1,4 +1,6 @@
 {#{% load url from future %}#}
+{% extends 'app/base.html' %}
+{% block body_block %}
 
 <form action="{% url 'new-topic' forum.id %}" method="POST">
     <h2>{{ searchterm }}</h2>
@@ -6,12 +8,14 @@
     {{ form.as_p }}
  <input type="submit" class="checkbox">I agree to all Terms and Conditions. Create Topic.
 
-    <form id="cref" name="cref" action="django_simple_forum/new-topic.html" method="get">
-        <div class="panel-heading" align="right" id="second-div" style="float: right; width: 50%;">
-            <span>
-
-            </span>
-            <a href="http://127.0.0.1:8000/app/results.html/?searchterm={{ searchterm|urlencode }}" class="btn btn-danger"data-toggle="popover" title="Confused?" data-content="Click to start exploring!">Surprise Me!</a>
-        </div>
-    </form>
+{#    <form id="cref" name="cref" action="django_simple_forum/new-topic.html" method="get">#}
+{#        <div class="panel-heading" align="right" id="second-div" style="float: right; width: 50%;">#}
+{#            <span>#}
+{##}
+{#            </span>#}
+{#            <a href="http://127.0.0.1:8000/app/results.html/?searchterm={{ searchterm|urlencode }}" class="btn btn-danger"data-toggle="popover" title="Confused?" data-content="Click to start exploring!">Surprise Me!</a>#}
+{#        </div>#}
+{#    </form>#}
  </form>
+
+{% endblock %}
