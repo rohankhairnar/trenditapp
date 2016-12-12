@@ -189,10 +189,30 @@
 {#	<header>#}
 {#		<h1>{{ creator }}'s Timeline</h1>#}
 {#	</header>#}
-<div class="header" style="background-color: #3c3c3c; height: 250px"><br>
+<div class="header" style="background-color: gainsboro; height: 250px"><br>
 <p align="center" style="color: #ffffff; margin-top: 50px; font-weight: 700; font-size: xx-large">
     <b>{{ creator }}'s Timeline</b>
 </p>
+    <div id="list">
+<table align="right" class="timelinetable" style="border: 1px solid black; width: 15%">
+    <thead>
+        <th></th>
+        <th>Points</th>
+    </thead>
+    <tr>
+        <th>Topics</th>
+        <td>cell</td>
+    </tr>
+    <tr>
+        <th>Posts</th>
+        <td>cell</td>
+    </tr>
+    <tr>
+        <th>Peers</th>
+        <td>cell</td>
+    </tr>
+</table>
+</div>
     <br>
     <br>
     <div></div>
@@ -204,8 +224,11 @@
 	<section id="cd-timeline" class="cd-container">
     {% for topic in topics.object_list %}
 		<div class="cd-timeline-block">
+
 			<div class="cd-timeline-img cd-picture">
-				<img src="img/cd-icon-picture.svg" alt="Picture">
+{#                <p style="display: block;width: 24px;height: 24px;position: relative;left: 50%;top: 50%;margin-left: -7px;margin-top: -12px;">#}
+{#                    {{ topic.posts|length }}</p>#}
+{#				<img src="img/cd-icon-picture.svg" alt="Picture">#}
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
