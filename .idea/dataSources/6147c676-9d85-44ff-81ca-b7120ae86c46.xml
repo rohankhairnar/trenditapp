@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Sqlite (Xerial) - identifier.sqlite">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+    <schema id="1">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="random"/>
+    <column id="3" parent="2" name="random">
+      <data-type>INT(0,-1)|4</data-type>
+    </column>
+  </database-model>
+</dataSource>
