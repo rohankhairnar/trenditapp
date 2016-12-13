@@ -131,8 +131,8 @@ LOGIN_URL = '/mainapp/login/'
 #For sending email settings:
 EMAIL_HOST = 'smtp.googlemail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = ''
-EMAIL_HOST_USER = 'trendittheapp@gmail.com'
+EMAIL_HOST_PASSWORD = '' #add your gmail password here
+EMAIL_HOST_USER = '<idname>@gmail.com'  #add your gmail ID here
 EMAIL_USE_TLS   = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

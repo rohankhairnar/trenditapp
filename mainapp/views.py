@@ -16,6 +16,10 @@ from django.core.exceptions import ValidationError
 from django_forum.models import Topic, Post, Forum
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from trenditapp.settings import *
+<<<<<<< HEAD
+=======
+from datetime import datetime, timedelta
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
 
 
 def register(request):
@@ -108,12 +112,30 @@ def mk_paginator(request, items, num_items):
 
 def timeline(request):
     userid = request.user.id
+<<<<<<< HEAD
     topics = Topic.objects.filter(creator=userid).order_by("-created")
     creator = request.user.username  # This pulls the user object from creator field
     topics = mk_paginator(request, topics, DJANGO_SIMPLE_FORUM_TOPICS_PER_PAGE)
 
     return render(request, "app/timeline.html", add_csrf(request,
         topics=topics, creator=creator))
+=======
+    topics = Topic.objects.filter(creator=userid).order_by("-updated")
+    creator = request.user.username  # This pulls the user object from creator field
+    topics = mk_paginator(request, topics, DJANGO_SIMPLE_FORUM_TOPICS_PER_PAGE)
+    now = datetime.now()
+    userlogin = request.user.last_login
+    print(userlogin)
+    print(userlogin)
+    print(now)
+    # time_threshold = now - timedelta(hours=123)
+    lastpost = Post.objects.filter(created__range=(userlogin,now))
+    lenpost = len(lastpost)
+    # print(len(lastpost))
+
+    return render(request, "app/timeline.html", add_csrf(request,
+        topics=topics, creator=creator, lenpost=lenpost, lastpost=lastpost))
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
 
 
 @login_required
