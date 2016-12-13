@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <style>
   body
   p {font-size: 24px;}
@@ -74,9 +74,7 @@
             <script src="{% static 'js/scrolling-nav.js' %}"></script>
 
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="{% static 'css/jqcloud.min.css' %}">
 
         <!-- Bootstrap -->
@@ -93,11 +91,10 @@
         <title>Trend!t - {% block title %}Trend!t on the go!{% endblock %}</title>
         <link href="{% static 'css/scrolling-nav.css' %}" rel="stylesheet">
 
-
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
-{#    timeline#}
+{
 
     </head>
 
@@ -182,11 +179,62 @@
                     <!--/.well -->
                 </div>
               <!--/span-->
-                <div class="span11" style="height:10%">
-                    {% block body_block %}
+                <div class="span11" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;">
 
-                    {% endblock %}
-                </div>
+
+{#                TIMELINE STARTS HERE------>>#}
+
+
+<link rel="stylesheet" href={% static "css/reset.css"%}> <!-- CSS reset -->
+	<link rel="stylesheet" href={% static "css/style.css" %}> <!-- Resource style -->
+	<script src={% static "js/modernizr.js" %}></script> <!-- Modernizr -->
+{#	<header>#}
+{#		<h1>{{ creator }}'s Timeline</h1>#}
+{#	</header>#}
+<div class="header" style="background-color: #3e8f3e; height: 250px; margin-left: 7%; margin-right: 4%"><br>
+<p align="center" style="color: #bbccdd; margin-top: 50px; font-weight: 700; font-size: xx-large;font-variant: all-petite-caps">
+    <b>{{ creator }}'s Timeline</b>
+</p>
+    <br>
+    <br>
+    <div></div>
+    <div class="row">
+        <img src="http://www.3dstuffmakers.com/wp-content/uploads/2013/05/generic-avatar.png" height="140" class="col-lg-offset-2 img-rounded" align="left">
+
+        <div class="col-lg-offset-8" style="color: #bbccdd">
+    <p>Last login: {{ user.last_login }}</p>
+            <img src="{{ user.picture.url }}">
+       <!-- <br><p> {{ user.first_name|capfirst }}   </p><br>-->
+        <!--<p>Username: {{ user.username }}</p>-->
+    <br><p><i class="fa fa-envelope-o"></i> {{ user.email }}</p>
+    </div></div>
+</div>
+<div>
+	<section id="cd-timeline" class="cd-container">
+    {% for topic in topics.object_list %}
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="img/cd-icon-picture.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>{{ topic.title }}</h2>
+				<p>{{ topic.description }}</p>
+				<a href="{% url 'topic-detail' topic.pk %}" class="cd-read-more">Connect again!</a>
+				<span class="cd-date">{{ topic.created }}</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+        {% endfor %}
+
+
+	</section> <!-- cd-timeline -->
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src={% static "js/main.js" %}></script> <!-- Resource jQuery -->
+
+</div>
+
+{#        Timeline    ends here#}
                 <!--/span-->
             </div>
             <!--/row-->
