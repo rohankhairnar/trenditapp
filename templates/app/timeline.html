@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 {% load static %}
+<<<<<<< HEAD
+<html xmlns="http://www.w3.org/1999/html">
+=======
 <html>
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
 <style>
   body
   p {font-size: 24px;}
@@ -74,6 +78,10 @@
             <script src="{% static 'js/scrolling-nav.js' %}"></script>
 
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+<<<<<<< HEAD
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+=======
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
         <link href="{% static 'css/jqcloud.min.css' %}">
 
         <!-- Bootstrap -->
@@ -110,7 +118,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
+<<<<<<< HEAD
+                <a class="navbar-brand page-scroll" href="/"><span class="glyphicon glyphicon-globe gly-spin"></span>TREND!T</a>
+=======
                 <a class="navbar-brand page-scroll" href="#page-top"><span class="glyphicon glyphicon-globe gly-spin"></span>TREND!T</a>
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
                 </div>
 
                    <!--<div class="nav nav-pills">-->
@@ -132,8 +144,13 @@
                        {% if user.is_authenticated %}
 
                         <li><a class="page-scroll" href="/"  ><span class="glyphicon glyphicon-home"></span>Home</a></li>
+<<<<<<< HEAD
+                        <li><a class="page-scroll" href="/timeline/"><span class="glyphicon glyphicon-user"></span>My Timeline</a></li>
+                           <li><a class="page-scroll" href="/logout/"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+=======
                         <li><a class="page-scroll" href="/details/"><span class="glyphicon glyphicon-user"></span>Account details</a></li>
                         <li><a class="page-scroll" href="/logout/" >Logout</a></li>
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
                             <li>
                             <a class="page-scroll" href="#about">About</a>
                         </li>
@@ -178,7 +195,12 @@
                     <!--/.well -->
                 </div>
               <!--/span-->
+<<<<<<< HEAD
+                <div class="span11" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;">
+
+=======
                 <div class="span11">
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
 
 {#                TIMELINE STARTS HERE------>>#}
 
@@ -189,6 +211,25 @@
 {#	<header>#}
 {#		<h1>{{ creator }}'s Timeline</h1>#}
 {#	</header>#}
+<<<<<<< HEAD
+<div class="header" style="background-color: #3e8f3e; height: 250px; margin-left: 7%; margin-right: 4%"><br>
+<p align="center" style="color: #bbccdd; margin-top: 50px; font-weight: 700; font-size: xx-large;font-variant: all-petite-caps">
+    <b>{{ creator }}'s Timeline</b>
+</p>
+    <br>
+    <br>
+    <div></div>
+    <div class="row">
+        <img src="http://www.3dstuffmakers.com/wp-content/uploads/2013/05/generic-avatar.png" height="140" class="col-lg-offset-2 img-rounded" align="left">
+
+        <div class="col-lg-offset-8" style="color: #bbccdd">
+    <p>Last login: {{ user.last_login }}</p>
+            <img src="{{ user.picture.url }}">
+       <!-- <br><p> {{ user.first_name|capfirst }}   </p><br>-->
+        <!--<p>Username: {{ user.username }}</p>-->
+    <br><p><i class="fa fa-envelope-o"></i> {{ user.email }}</p>
+    </div></div>
+=======
 <div class="header" style="background-color: gainsboro; height: 250px"><br>
 <p align="center" style="color: #ffffff; margin-top: 50px; font-weight: 700; font-size: xx-large">
     <b>{{ creator }}'s Timeline</b>
@@ -219,16 +260,22 @@
     <p>Name: {{ user.first_name }}   Username: {{ user.username }}</p>
     <p>Email ID: {{ user.email }}</p>
     <p>Last login: {{ user.last_login }}</p>
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
 </div>
 <div>
 	<section id="cd-timeline" class="cd-container">
     {% for topic in topics.object_list %}
 		<div class="cd-timeline-block">
+<<<<<<< HEAD
+			<div class="cd-timeline-img cd-picture">
+				<img src="img/cd-icon-picture.svg" alt="Picture">
+=======
 
 			<div class="cd-timeline-img cd-picture">
 {#                <p style="display: block;width: 24px;height: 24px;position: relative;left: 50%;top: 50%;margin-left: -7px;margin-top: -12px;">#}
 {#                    {{ topic.posts|length }}</p>#}
 {#				<img src="img/cd-icon-picture.svg" alt="Picture">#}
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
@@ -263,6 +310,10 @@
         <div style="background-color:#222222">
 
             <section id="about" class="about-section" style="background-color:#222222">
+<<<<<<< HEAD
+                <a class="fa fa-home" style="font-size: large" href="#page-top">Skip To Home</a><br><br>
+=======
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
             <p align="center"><a target="_blank" title="find us on Facebook" href="http://www.facebook.com/PLACEHOLDER"><img alt="follow me on facebook" src="//login.create.net/images/icons/user/facebook_40x40.png" border=0></a></p>
            </section>
     <section id="about" class="about-section" style="background-color:#222222">

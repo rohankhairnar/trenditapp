@@ -74,6 +74,9 @@
             <script src="{% static 'js/scrolling-nav.js' %}"></script>
 
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
         <link href="{% static 'css/jqcloud.min.css' %}">
 
         <!-- Bootstrap -->
@@ -89,6 +92,7 @@
         <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
         <title>Trend!t - {% block title %}Trend!t on the go!{% endblock %}</title>
         <link href="{% static 'css/scrolling-nav.css' %}" rel="stylesheet">
+
 
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -110,7 +114,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><span class="glyphicon glyphicon-globe gly-spin"></span>TREND!T</a>
+                <a class="navbar-brand page-scroll" href="/"><span class="glyphicon glyphicon-globe gly-spin"></span>TREND!T</a>
                 </div>
 
                    <!--<div class="nav nav-pills">-->
@@ -132,8 +136,13 @@
                        {% if user.is_authenticated %}
 
                         <li><a class="page-scroll" href="/"  ><span class="glyphicon glyphicon-home"></span>Home</a></li>
+<<<<<<< HEAD
+                        <li><a class="page-scroll" href="/timeline/"><span class="glyphicon glyphicon-user"></span>My Timeline</a></li>
+                           <li><a class="page-scroll" href="/logout/"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+=======
                         <li><a class="page-scroll" href="/details/"><span class="glyphicon glyphicon-user"></span>Account details</a></li>
                         <li><a class="page-scroll" href="/logout/" ><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
                             <li>
                             <a class="page-scroll" href="#about">About</a>
                         </li>
@@ -178,7 +187,11 @@
                     <!--/.well -->
                 </div>
               <!--/span-->
+<<<<<<< HEAD
+                <div class="span11" style="height:10%">
+=======
                 <div class="span11" style="height: 555px">
+>>>>>>> 1add5824c24d7073dffea3d9b0d0cf8785d14cff
                     {% block body_block %}
 
                     {% endblock %}
@@ -197,6 +210,7 @@
         <div style="background-color:#222222">
 
             <section id="about" class="about-section" style="background-color:#222222">
+                <a class="fa fa-home" style="font-size: large" href="#page-top">Skip To Home</a><br><br>
             <p align="center"><a target="_blank" title="find us on Facebook" href="http://www.facebook.com/PLACEHOLDER"><img alt="follow me on facebook" src="//login.create.net/images/icons/user/facebook_40x40.png" border=0></a></p>
            </section>
     <section id="about" class="about-section" style="background-color:#222222">
